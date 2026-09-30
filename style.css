@@ -1,0 +1,680 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background: #f7f7f5;
+    color: #171717;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.header {
+    height: 86px;
+    padding: 0 7.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f7f7f5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #e8e8e5;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.brand-mark {
+    font:
+        800 34px Manrope,
+        sans-serif;
+    letter-spacing: -4px;
+}
+.brand-mark span {
+    color: #a6a6a0;
+}
+.brand-name {
+    font: 700 12px Manrope;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.brand-name b {
+    font-weight: 400;
+    letter-spacing: 3.2px;
+    font-size: 9px;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    font-size: 12px;
+    color: #555;
+}
+.nav a {
+    transition: color 0.2s;
+}
+.nav a:hover {
+    color: #000;
+}
+.nav-cta {
+    border: 1px solid #d5d5d1;
+    padding: 13px 17px;
+    color: #171717 !important;
+}
+.nav-cta span {
+    margin-left: 20px;
+}
+.menu-toggle {
+    display: none;
+}
+.hero {
+    min-height: 650px;
+    height: calc(100vh - 86px);
+    max-height: 850px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 12%;
+    background: #eaeae6;
+}
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(25, 25, 25, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(25, 25, 25, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(90deg, black, transparent 85%);
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 610px;
+}
+.eyebrow,
+.section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #777;
+}
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: #888;
+}
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+h1,
+h2 {
+    font-family: Manrope, sans-serif;
+    letter-spacing: -0.065em;
+    font-weight: 500;
+}
+h1 {
+    font-size: clamp(58px, 7vw, 100px);
+    line-height: 0.99;
+    margin: 30px 0 24px;
+}
+h1 em,
+h2 em {
+    font-style: normal;
+    color: #898983;
+}
+.hero-copy {
+    max-width: 400px;
+    color: #656560;
+    line-height: 1.8;
+    font-size: 15px;
+}
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 34px;
+}
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 16px 19px;
+    font-size: 12px;
+    font-weight: 600;
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+.button:hover {
+    transform: translateY(-2px);
+}
+.button-dark {
+    background: #191919;
+    color: white;
+}
+.button-dark:hover {
+    background: #333;
+}
+.text-link,
+.under-link {
+    font-size: 12px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 8px;
+}
+.text-link span {
+    margin-left: 10px;
+}
+.hero-visual {
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    right: 11%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+}
+.visual-orbit {
+    position: absolute;
+    border: 1px solid #c9c9c3;
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+.orbit-one {
+    width: 390px;
+    height: 250px;
+}
+.orbit-two {
+    width: 270px;
+    height: 420px;
+    transform: rotate(55deg);
+}
+.visual-core {
+    width: 180px;
+    height: 180px;
+    background: #191919;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 70px #0002;
+}
+.visual-core span {
+    font: 800 75px Manrope;
+    line-height: 1;
+    letter-spacing: -10px;
+    margin-left: -9px;
+}
+.visual-core small {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 9px;
+    line-height: 1.7;
+}
+.float-card {
+    position: absolute;
+    background: #f9f9f7;
+    padding: 13px 17px;
+    box-shadow: 0 10px 30px #0000000b;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+}
+.card-top {
+    top: 70px;
+    right: 0;
+}
+.card-bottom {
+    bottom: 65px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.card-bottom b {
+    font-size: 9px;
+    color: #888;
+}
+.dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #777;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+.hero-foot {
+    position: absolute;
+    bottom: 28px;
+    left: 7.2%;
+    right: 7.2%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #888;
+}
+.section-pad {
+    padding: 120px 12%;
+}
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 35px;
+    background: #f7f7f5;
+}
+.intro-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+}
+.intro h2,
+.section-head h2,
+.process h2 {
+    font-size: clamp(40px, 5vw, 66px);
+    line-height: 1.08;
+    margin: 0;
+}
+.intro-body p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #666;
+    margin: 9px 0 25px;
+}
+.under-link span {
+    margin-left: 14px;
+}
+.services {
+    background: #fff;
+}
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 65px;
+}
+.section-head p {
+    max-width: 260px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+.service {
+    display: grid;
+    grid-template-columns: 70px 1fr 30px;
+    gap: 20px;
+    align-items: start;
+    padding: 27px 0;
+    border-top: 1px solid #e9e9e6;
+    transition: padding 0.25s;
+}
+.service:last-child {
+    border-bottom: 1px solid #e9e9e6;
+}
+.service:hover {
+    padding-left: 10px;
+}
+.service-no {
+    font-size: 11px;
+    color: #999;
+    padding-top: 8px;
+}
+.service h3 {
+    font: 600 22px Manrope;
+    margin: 0 0 9px;
+    letter-spacing: -0.7px;
+}
+.service p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+    line-height: 1.7;
+}
+.service-icon {
+    font-size: 20px;
+    color: #888;
+}
+.manifesto {
+    background: #1a1a1a;
+    color: white;
+    padding: 110px 12%;
+    text-align: center;
+}
+.manifesto .section-label {
+    color: #999;
+}
+.manifesto h2 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.05;
+    margin: 35px 0 22px;
+}
+.manifesto h2 em {
+    color: #92928c;
+}
+.manifesto p {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.9;
+}
+.process h2 {
+    margin: 30px 0 65px;
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #ddd;
+}
+.step {
+    padding: 25px 22px 0 0;
+}
+.step > span {
+    font-size: 11px;
+    color: #999;
+}
+.step h3 {
+    font: 600 18px Manrope;
+    margin: 30px 0 12px;
+}
+.step p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #777;
+    max-width: 200px;
+}
+.contact {
+    background: #e9e9e5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    align-items: center;
+}
+.contact h2 {
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1.05;
+    margin: 30px 0 20px;
+}
+.contact-left > p {
+    font-size: 13px;
+    color: #777;
+    max-width: 320px;
+    line-height: 1.8;
+}
+.contact-card {
+    background: #1b1b1b;
+    color: white;
+    padding: 40px;
+}
+.contact-kicker {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #999;
+}
+.email {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font: 500 clamp(14px, 1.6vw, 20px) Manrope;
+    margin: 25px 0;
+    overflow-wrap: anywhere;
+}
+.contact-divider {
+    height: 1px;
+    background: #3c3c3c;
+    margin: 25px 0;
+}
+.contact-card p {
+    font-size: 12px;
+    color: #aaa;
+}
+.button-light {
+    background: #f5f5f2;
+    color: #171717;
+    width: 100%;
+}
+.contact-card small {
+    display: block;
+    color: #888;
+    font-size: 10px;
+    line-height: 1.6;
+    margin-top: 14px;
+}
+.footer {
+    min-height: 100px;
+    padding: 25px 7.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #f7f7f5;
+    color: #777;
+    font-size: 10px;
+}
+.brand-footer {
+    color: #171717;
+}
+.footer > a:last-child {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+@media (max-width: 900px) {
+    .hero {
+        padding: 0 8%;
+    }
+    .hero-visual {
+        right: -100px;
+        opacity: 0.5;
+    }
+    .hero-content {
+        max-width: 550px;
+    }
+    .section-pad {
+        padding: 90px 8%;
+    }
+    .intro {
+        grid-template-columns: 1fr;
+    }
+    .intro-body {
+        gap: 35px;
+    }
+    .contact {
+        gap: 5%;
+    }
+    .nav {
+        gap: 20px;
+    }
+}
+@media (max-width: 650px) {
+    .header {
+        height: 72px;
+        padding: 0 6%;
+    }
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        border: 0;
+        background: none;
+        padding: 10px;
+    }
+    .menu-toggle i {
+        width: 23px;
+        height: 1px;
+        background: #222;
+    }
+    .nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #f7f7f5;
+        padding: 22px 6% 28px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    .nav.open {
+        display: flex;
+    }
+    .nav-cta {
+        text-align: center;
+    }
+    .hero {
+        height: auto;
+        min-height: 690px;
+        max-height: none;
+        align-items: flex-start;
+        padding: 100px 7% 85px;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    h1 {
+        font-size: clamp(55px, 15vw, 80px);
+    }
+    .hero-copy {
+        font-size: 14px;
+        max-width: 310px;
+    }
+    .hero-visual {
+        width: 280px;
+        height: 280px;
+        right: -90px;
+        top: auto;
+        bottom: 15px;
+        transform: none;
+        opacity: 0.23;
+    }
+    .orbit-one {
+        width: 270px;
+        height: 180px;
+    }
+    .orbit-two {
+        height: 270px;
+        width: 180px;
+    }
+    .visual-core {
+        width: 120px;
+        height: 120px;
+    }
+    .visual-core span {
+        font-size: 50px;
+    }
+    .float-card {
+        display: none;
+    }
+    .hero-foot {
+        left: 7%;
+        right: 7%;
+        bottom: 20px;
+    }
+    .section-pad {
+        padding: 75px 7%;
+    }
+    .intro-body {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .intro h2,
+    .section-head h2,
+    .process h2 {
+        font-size: 44px;
+    }
+    .section-head {
+        display: block;
+        margin-bottom: 40px;
+    }
+    .section-head p {
+        margin-top: 22px;
+    }
+    .service {
+        grid-template-columns: 35px 1fr 20px;
+        gap: 10px;
+        padding: 23px 0;
+    }
+    .service h3 {
+        font-size: 17px;
+    }
+    .service p {
+        font-size: 12px;
+    }
+    .manifesto {
+        padding: 85px 7%;
+    }
+    .manifesto h2 {
+        font-size: 54px;
+    }
+    .steps {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+    }
+    .step {
+        padding-right: 12px;
+    }
+    .step h3 {
+        margin: 20px 0 10px;
+    }
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .contact h2 {
+        font-size: 56px;
+    }
+    .contact-card {
+        padding: 27px 22px;
+    }
+    .footer {
+        padding: 25px 7%;
+        flex-wrap: wrap;
+    }
+    .footer > span {
+        order: 3;
+        width: 100%;
+    }
+}
+/* Mobil logo varsayılan olarak gizli */
+.mobile-logo {
+  display: none;
+}
+
+/* Mobil görünüm */
+@media (max-width: 768px) {
+  .brand-mark,
+  .brand-name {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+  }
+}
